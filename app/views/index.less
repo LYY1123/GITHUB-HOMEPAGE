@@ -1,0 +1,264 @@
+#app {
+	position: relative;
+	height: 100%;
+	background-color: #f5f5f5;
+	overflow: hidden;
+	.bg-header {
+		width: 100%;
+		height: 400/105rem;
+		background-image: url("../images/header-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+	.contentHeader-subheading {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		height: 80/102rem;
+		background-color: rgba(255,255,255,0.6);
+		border-bottom: 1px solid #ccc;
+		cursor: pointer;
+		z-index: 999;
+		span {
+			font-size: 20/102rem;
+		}
+		.portrait {
+			margin-left: 50/105rem;
+			width: 40/105rem;
+			height: 40/105rem;
+			background-image: url("../images/header-ico.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+			border-radius: 50%;
+		}
+		.name {
+			margin-left: 20/102rem;
+		}
+		.title {
+			margin-left: 20/102rem;
+		}
+	}
+	.content {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		overflow: scroll;
+		overflow-x: hidden; 
+		.contentHeader {
+			width: 100%;
+			height: 400/105rem;
+			overflow: auto;
+			.headerPic {
+				box-sizing: border-box;
+				margin-top: 150/105rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				text-align: center;
+				overflow: hidden;
+				cursor: pointer;
+				.portrait {
+					display: inline-block;
+					width: 100/105rem;
+					height: 100/105rem;
+					background-image: url("../images/header-ico.jpg");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: 100% auto;
+					border-radius: 50%;
+				}
+				.name {
+					display: inline-block;
+					margin-left: 20/105rem;
+					height: 100/105rem;
+					line-height: 100/105rem;
+					font-size: 60/102rem;
+				}
+			}
+			.title {
+				margin-top: 20/105rem;
+				font-size: 20/102rem;
+				text-align: center;
+			}
+		}
+		.listWrapper {
+			box-sizing: border-box;
+			padding: 20/102rem 0;
+			margin: 0 auto;
+			margin-top: -10/20rem;
+			width: 80%;
+			min-height: 200/40rem;
+			background-color: #fff;
+			overflow: auto;
+			.list-header,
+			.list-content {
+				box-sizing: border-box;
+				padding: 0.2rem 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				font-size: 20/102rem;
+				text-align: center;
+				overflow: hidden;
+				.list-title {
+					width: 50%;
+					text-align: left;
+				}
+				.list-right {
+					flex: 1;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					span {
+						flex: 1;
+						text-align: center;
+					}
+				}
+			}
+			.list-content {
+				.list-title>a {
+					color: #175199;
+					text-decoration: none;
+				}
+				.list-title>a:hover {
+					color: #175199;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.github-ico {
+		position: absolute;
+		right: 40/102rem;
+		bottom: 40/102rem;
+		width: 70/102rem;
+		height: 70/102rem;
+		background-image: url("../images/github-ico.png");
+		background-size: 60% auto;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		border: 1px solid #ccc;
+		cursor: pointer;
+	}
+	.can-offline,
+	.pwa-hint {
+		padding: 10px;
+		position: absolute;
+		top: 120/102rem;
+		font-size: 30/102rem;
+		color: red;
+		white-space: nowrap;
+		transition: all 10s linear;
+	}
+	.can-offline.default,
+	.pwa-hint.default {
+		left: 100%;
+	}
+	.can-offline.done,
+	.pwa-hint.done {
+		left: 0;
+		transform: translateX(-100%);
+	}
+}
+
+@media screen and (max-width: 414px) { 
+	#app {
+		.bg-header {
+			height: 138/22rem;
+		}
+		.contentHeader-subheading {
+			height: 40/22rem;
+			span {
+				font-size: 14/22rem;
+			}
+			.portrait {
+				display: inline-block;
+				margin-left: 20/22rem;
+				width: 20/22rem;
+				height: 20/22rem;
+			}
+			.name {
+				margin-left: 20/22rem;
+			}
+			.title {
+				margin-left: 20/22rem;
+			}
+		}
+
+		.content {
+			.contentHeader {
+				height: 138/22rem;
+				.headerPic {
+					margin-top: 50/22rem;
+					.portrait {
+						width: 40/22rem;
+						height: 40/22rem;
+					}
+					.name {
+						margin-left: 20/22rem;
+						font-size: 20/22rem;
+					}
+				}
+				.title {
+					font-size: 12/22rem;
+				}
+			}
+			.listWrapper {
+				margin-top: 0;
+				width: 100%;
+				.list-header {
+					display: none;
+				}
+				.list-content {
+					margin-top: 20/22rem;
+					align-items: flex-start;
+					flex-direction: column;
+					font-size: 16/22rem;
+					div {
+						flex: 1;
+					}
+					.list-title {
+						width: 100%;
+					}
+					.list-right {
+						margin-top: 20/22rem;
+						justify-content: flex-start;
+						width: 100%;
+						font-size: 14/22rem;
+						color: #999;
+						text-align: left;
+						span {
+							flex: none;
+						}
+						.list-creatTime {
+							margin-right: 20px;
+						}
+					}
+				}
+			}
+		}
+		.github-ico {
+			width: 40/22rem;
+			height: 40/22rem;
+		}
+		.can-offline,
+		.pwa-hint {
+			top: 80/22rem;
+			font-size: 14/22rem;
+		}
+		.pwa-hint{
+			top: 40/22rem;
+		}
+	}
+}

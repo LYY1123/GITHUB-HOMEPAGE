@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>大前端的养成之路</title>
+	<link rel="manifest" href="./mainfest.json">
+	<style>
+		.ms-controller{
+		   visibility: hidden
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="ms-controller" ms-controller="app">
+		<div class="bg-header">
+			
+		</div>
+		<!-- 固定在顶部的标题 -->
+		<div class="contentHeader-subheading" :visible="@pageToTop">
+			<span class="portrait" :click="@headerClick"></span>
+			<span class="name" ms-text="@name"></span>
+			<span class="title">{{@projectName}}</span>
+		</div>
+		<!-- 固定在顶部的标题 end -->
+		<!-- 内容 -->
+		<div class="content" :scroll="@pageScroll">
+			<div class="contentHeader">
+				<p class="headerPic"><span class="portrait" :click="@headerClick"></span><span class="name" ms-text="@name"></span></p>
+				<p class="title" id="projectName">{{@projectName}}</p>
+			</div>
+			<div ms-html="@view" class="view-wrapper">
+				
+			</div>
+		</div>
+		<!-- 内容end -->
+		<!-- 固定github图标 -->
+		<div class="github-ico" :click="@headerClick"></div>
+		<!-- 固定github 图表end -->
+		<!-- 可离线访问提示 -->
+		<div class="can-offline" :class="@offlineState">当前网站已经支持离线访问了！！！</div>
+		<!-- 可离线访问提示end -->
+		<!-- 可离线访问提示 -->
+		<div class="pwa-hint" :class="@pwa">检测到您可能在手机版谷歌浏览器访问本页面。请尝试将本网站发送桌面以获得更好的体验！！</div>
+		<!-- 可离线访问提示end -->
+	</div>
+</body>
+</html>
